@@ -18,6 +18,9 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
+#include "usart.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -49,7 +52,6 @@
 //extern DMA_HandleTypeDef hdma_usart1_rx;
 
 //uint8_t RxBuf[RxBuf_SIZE];
-//uint8_t RxBuf2[RxBuf_SIZE];
 //uint8_t MainBuf[MainBuf_SIZE];
 //uint16_t oldPos=0;
 //uint16_t newPos=0;
@@ -86,7 +88,19 @@
 //
  //    }
 /////////////////////////////////////
-
+// DMA IDLE LINE BUFFER SIFIRLAMA
+//extern DMA_HandleTypeDef hdma_usart1_rx;
+//#define RxBufferSize 50
+//uint8_t RxBuffer[RxBufferSize];
+//void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
+//	if(huart->Instance ==USART1){
+//		HAL_UARTEx_ReceiveToIdle_DMA(&huart1, RxBuffer, RxBufferSize);
+//		  __HAL_DMA_DISABLE_IT(&hdma_usart1_rx,DMA_IT_HT);
+//		  for(int i=Size;i<RxBufferSize	;i++){
+//			  RxBuffer[i]=0;
+//		  }
+//	}
+//}
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
